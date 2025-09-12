@@ -6,10 +6,7 @@ import { ShieldCheck, Activity, ChevronRight } from "lucide-react";
 export default function AppLayout() {
   const location = useLocation();
 
-  const navLink = (
-    to: string,
-    label: string,
-  ) => (
+  const navLink = (to: string, label: string) => (
     <NavLink
       to={to}
       className={({ isActive }) =>
@@ -35,7 +32,9 @@ export default function AppLayout() {
               <Activity className="size-5" />
             </div>
             <div className="leading-tight">
-              <p className="font-extrabold tracking-tight text-lg">PredictaCare</p>
+              <p className="font-extrabold tracking-tight text-lg">
+                PredictaCare
+              </p>
               <p className="text-[11px] text-muted-foreground -mt-1">
                 AI-powered Disease Detection
               </p>
@@ -45,10 +44,16 @@ export default function AppLayout() {
           <nav className="hidden md:flex items-center gap-1">
             {navLink("/", "Home")}
             {navLink("/console", "Console")}
-            <a href="#architecture" className="px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-accent">
+            <a
+              href="#architecture"
+              className="px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
+            >
               Architecture
             </a>
-            <a href="#security" className="px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-accent">
+            <a
+              href="#security"
+              className="px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
+            >
               Security
             </a>
           </nav>
@@ -78,18 +83,34 @@ export default function AppLayout() {
               <div className="size-8 grid place-items-center rounded-md bg-gradient-to-br from-primary to-teal-500 text-primary-foreground">
                 <ShieldCheck className="size-5" />
               </div>
-              <span className="font-semibold">Explainability • Security • Auditability</span>
+              <span className="font-semibold">
+                Explainability • Security • Auditability
+              </span>
             </div>
             <p className="mt-3 text-sm text-muted-foreground max-w-sm">
-              PredictaCare focuses on interpretable AI with security and privacy by design, enabling clinicians and researchers to trust every prediction.
+              PredictaCare focuses on interpretable AI with security and privacy
+              by design, enabling clinicians and researchers to trust every
+              prediction.
             </p>
           </div>
           <div className="text-sm">
             <p className="font-semibold mb-2">Product</p>
             <ul className="space-y-1 text-muted-foreground">
-              <li><a href="#features" className="hover:text-foreground">Features</a></li>
-              <li><a href="#architecture" className="hover:text-foreground">Architecture</a></li>
-              <li><a href="#monitoring" className="hover:text-foreground">Monitoring</a></li>
+              <li>
+                <a href="#features" className="hover:text-foreground">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="#architecture" className="hover:text-foreground">
+                  Architecture
+                </a>
+              </li>
+              <li>
+                <a href="#monitoring" className="hover:text-foreground">
+                  Monitoring
+                </a>
+              </li>
             </ul>
           </div>
           <div className="text-sm">
