@@ -2,9 +2,15 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ShieldCheck, Activity, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/hooks/use-toast";
 
 export default function AppLayout() {
   const location = useLocation();
+  const [openSignIn, setOpenSignIn] = useState(false);
 
   const navLink = (to: string, label: string) => (
     <NavLink
@@ -59,9 +65,32 @@ export default function AppLayout() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button variant="ghost" className="hidden sm:inline-flex">
-              Sign in
-            </Button>
+            <Dialog open={openSignIn} onOpenChange={setOpenSignIn}>
+              <DialogTrigger asChild>
+                <Button variant="ghost" className="hidden sm:inline-flex">
+                  Sign in
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Sign in</DialogTitle>
+                  <DialogDescription>Demo-only authentication</DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-3">
+                  <div className="text-sm">
+                    <Label>Email</Label>
+                    <Input type="email" placeholder="you@hospital.org" />
+                  </div>
+                  <div className="text-sm">
+                    <Label>Password</Label>
+                    <Input type="password" placeholder="••••••••" />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button onClick={()=>{ setOpenSignIn(false); toast({ title: "Signed in", description: "Welcome back" }); }}>Continue</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
             <Button asChild className="group">
               <Link to="/console">
                 Open Console
