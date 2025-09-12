@@ -45,13 +45,13 @@ export default function AppLayout() {
             {navLink("/", "Home")}
             {navLink("/console", "Console")}
             <a
-              href="#architecture"
+              href="/#architecture"
               className="px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
             >
               Architecture
             </a>
             <a
-              href="#security"
+              href="/#security"
               className="px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
             >
               Security
@@ -97,17 +97,17 @@ export default function AppLayout() {
             <p className="font-semibold mb-2">Product</p>
             <ul className="space-y-1 text-muted-foreground">
               <li>
-                <a href="#features" className="hover:text-foreground">
+                <a href="/#features" className="hover:text-foreground">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#architecture" className="hover:text-foreground">
+                <a href="/#architecture" className="hover:text-foreground">
                   Architecture
                 </a>
               </li>
               <li>
-                <a href="#monitoring" className="hover:text-foreground">
+                <a href="/#monitoring" className="hover:text-foreground">
                   Monitoring
                 </a>
               </li>
