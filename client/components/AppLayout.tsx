@@ -3,7 +3,15 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ShieldCheck, Activity, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
@@ -74,7 +82,9 @@ export default function AppLayout() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Sign in</DialogTitle>
-                  <DialogDescription>Demo-only authentication</DialogDescription>
+                  <DialogDescription>
+                    Demo-only authentication
+                  </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-3">
                   <div className="text-sm">
@@ -87,7 +97,17 @@ export default function AppLayout() {
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button onClick={()=>{ setOpenSignIn(false); toast({ title: "Signed in", description: "Welcome back" }); }}>Continue</Button>
+                  <Button
+                    onClick={() => {
+                      setOpenSignIn(false);
+                      toast({
+                        title: "Signed in",
+                        description: "Welcome back",
+                      });
+                    }}
+                  >
+                    Continue
+                  </Button>
                 </DialogFooter>
               </DialogContent>
             </Dialog>
